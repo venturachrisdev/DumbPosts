@@ -18,11 +18,11 @@ Libraries
 
 Todo
 ----
-[ ] `injection` package should be inside of presentation.
-[ ] `model` package inside `domain` must be renamed `entities`.
-[ ] create another models inside `data`. `data models` and `domain entities` should be different classes for better scalability.
-[ ] creates tests for each layer.
-[ ] implements retrolambda.
+- [ ] `injection` package should be inside of presentation.
+- [ ] `model` package inside `domain` must be renamed `entities`.
+- [ ] create another models inside `data`. `data models` and `domain entities` should be different classes for better scalability.
+- [ ] creates tests for each layer.
+- [ ] implements retrolambda.
 
 
 License
