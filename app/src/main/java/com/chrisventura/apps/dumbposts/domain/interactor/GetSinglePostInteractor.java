@@ -5,8 +5,6 @@ import com.chrisventura.apps.dumbposts.domain.interactor.base.AbstractInteractor
 import com.chrisventura.apps.dumbposts.domain.model.Post;
 import com.chrisventura.apps.dumbposts.domain.repository.PostRepository;
 
-import java.util.List;
-
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -14,29 +12,29 @@ import io.reactivex.Observable;
 import io.reactivex.Scheduler;
 
 /**
- * Created by ventu on 29/5/2017.
+ * Created by ventu on 31/5/2017.
  */
 
-public class GetPostsInteractor extends AbstractInteractor<List<Post>, Void> {
+public class GetSinglePostInteractor extends AbstractInteractor<Post, Object> {
     PostRepository repository;
 
     @Inject
-    public GetPostsInteractor(@Named("threadExecutor") Scheduler threadExecutor,
-                              @Named("postExecutor") Scheduler postExecutor,
-                              PostRepository postRepository,
-                              ConnectionHelper connectionHelper) {
+    public GetSinglePostInteractor(@Named("threadExecutor") Scheduler threadExecutor,
+                                   @Named("postExecutor") Scheduler postExecutor,
+                                   PostRepository postRepository,
+                                   ConnectionHelper connectionHelper) {
         super(threadExecutor, postExecutor, connectionHelper);
         this.repository = postRepository;
     }
 
-    public GetPostsInteractor(PostRepository postRepository,
-                              ConnectionHelper connectionHelper) {
+    public GetSinglePostInteractor(PostRepository postRepository,
+                                   ConnectionHelper connectionHelper) {
         super(null, null, connectionHelper);
         this.repository = postRepository;
     }
 
     @Override
-    public Observable<List<Post>> buildInteractorObservable(Void unused) {
-        return repository.get();
+    public Observable<Post> buildInteractorObservable(Object param) {
+        return repository.getSingle(param);
     }
 }

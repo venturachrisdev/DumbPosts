@@ -1,12 +1,20 @@
 package com.chrisventura.apps.dumbposts.domain.model;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by ventu on 29/5/2017.
  */
 
 public class Post {
-    int id, userId;
-    String title, body;
+    @SerializedName("id")
+    int id;
+    @SerializedName("userId")
+    int userId;
+    @SerializedName("title")
+    String title;
+    @SerializedName("body")
+    String body;
 
     public Post() {
     }

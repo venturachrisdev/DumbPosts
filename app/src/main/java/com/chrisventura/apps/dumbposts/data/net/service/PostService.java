@@ -20,7 +20,7 @@ public interface PostService {
     Observable<List<Post>> getPosts();
 
     @GET("posts/{id}")
-    Observable<Post> getSinglePost(@Path("id") Object id);
+    Observable<Post> getSinglePost(@Path("id") Integer id);
 
     @POST("posts")
     Observable<Post> insertPost(@Body Post post);

@@ -47,24 +47,31 @@ public class MainPresenterImpl implements MainPresenter {
     }
 
     @Override
+    public void dettach() {
+        this.mView = null;
+        getPostsInteractor.dispose();
+    }
+
+    @Override
     public void getPosts() {
 
         getPostsInteractor.execute(new DisposableObserver<List<Post>>() {
             @Override
             public void onNext(@NonNull List<Post> posts) {
-                mView.showPosts(posts);
+                if (mView != null)
+                    mView.showPosts(posts);
             }
 
             @Override
             public void onError(@NonNull Throwable e) {
                 e.printStackTrace();
-                mView.displayError(e.getMessage());
+                if (mView != null)
+                    mView.displayError(e.getMessage());
             }
 
             @Override
             public void onComplete() {
-                // TODO: Call view # hideProgress #
-                mView.displayError("No error: complete");
+                // TODO: Call {mView.hideProgress}
             }
         }, null);
     }

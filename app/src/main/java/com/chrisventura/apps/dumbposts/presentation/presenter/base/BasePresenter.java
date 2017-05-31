@@ -12,4 +12,6 @@ public interface BasePresenter {
     void onResume();
     void onPause();
     void onStop();
+
+    void dettach();
 }

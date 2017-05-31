@@ -29,7 +29,8 @@ public class PostRepositoryImpl implements PostRepository {
 
     @Override
     public Observable<Post> getSingle(Object id) {
-        return postService.getSinglePost(id);
+        Integer integer = (Integer) id;
+        return postService.getSinglePost(integer);
     }
 
     @Override

@@ -113,7 +113,7 @@ public class NetModule {
     @Provides
     @Singleton
     @Named("postExecutor")
-    Scheduler providesPostExectutor() {
+    Scheduler providesPostExecutor() {
         return AndroidSchedulers.mainThread();
     }
 
