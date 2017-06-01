@@ -1,6 +1,6 @@
 package com.chrisventura.apps.dumbposts.domain.repository;
 
-import com.chrisventura.apps.dumbposts.domain.model.Post;
+import com.chrisventura.apps.dumbposts.data.entity.PostEntity;
 
 import java.util.List;
 
@@ -13,12 +13,12 @@ import io.reactivex.Observable;
 public interface PostRepository {
 
     /* Return all the posts */
-    Observable<List<Post>> get();
+    Observable<List<PostEntity>> get();
 
     /* Return a single post using an ID */
-    Observable<Post> getSingle(Object id);
+    Observable<PostEntity> getSingle(Object id);
 
     /* insert a post */
-    Observable<Post> insert(Post post);
+    Observable<PostEntity> insert(PostEntity post);
 
 }

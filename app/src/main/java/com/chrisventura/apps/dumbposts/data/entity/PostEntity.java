@@ -1,17 +1,25 @@
-package com.chrisventura.apps.dumbposts.domain.model;
+package com.chrisventura.apps.dumbposts.data.entity;
+
+import com.google.gson.annotations.SerializedName;
 
 /**
- * Created by ventu on 29/5/2017.
+ * Created by ventu on 31/5/2017.
  */
 
-public class Post {
-    int id, userId;
-    String title, body;
+public class PostEntity {
+    @SerializedName("id")
+    int id;
+    @SerializedName("userId")
+    int userId;
+    @SerializedName("title")
+    String title;
+    @SerializedName("body")
+    String body;
 
-    public Post() {
+    public PostEntity() {
     }
 
-    public Post(int id, int userId, String title, String body) {
+    public PostEntity(int id, int userId, String title, String body) {
         this.id = id;
         this.userId = userId;
         this.title = title;

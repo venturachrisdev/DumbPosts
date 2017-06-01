@@ -1,5 +1,6 @@
 package com.chrisventura.apps.dumbposts.presentation.presenter.impl;
 
+import com.chrisventura.apps.dumbposts.data.entity.PostEntity;
 import com.chrisventura.apps.dumbposts.domain.interactor.GetPostsInteractor;
 import com.chrisventura.apps.dumbposts.domain.model.Post;
 import com.chrisventura.apps.dumbposts.presentation.presenter.MainPresenter;
@@ -7,8 +8,6 @@ import com.chrisventura.apps.dumbposts.presentation.ui.MainView;
 import com.chrisventura.apps.dumbposts.presentation.ui.base.BaseView;
 
 import java.util.List;
-
-import javax.inject.Inject;
 
 import io.reactivex.annotations.NonNull;
 import io.reactivex.observers.DisposableObserver;

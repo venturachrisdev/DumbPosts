@@ -1,9 +1,8 @@
-package com.chrisventura.apps.dumbposts.domain.injection.components;
+package com.chrisventura.apps.dumbposts.presentation.injection.components;
 
 import com.chrisventura.apps.dumbposts.DumbPostApplication;
-import com.chrisventura.apps.dumbposts.data.net.helper.ConnectionHelper;
-import com.chrisventura.apps.dumbposts.domain.injection.modules.AppModule;
-import com.chrisventura.apps.dumbposts.domain.injection.modules.NetModule;
+import com.chrisventura.apps.dumbposts.presentation.injection.modules.AppModule;
+import com.chrisventura.apps.dumbposts.presentation.injection.modules.NetModule;
 import com.chrisventura.apps.dumbposts.domain.interactor.GetPostsInteractor;
 
 import javax.inject.Singleton;

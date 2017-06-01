@@ -1,12 +1,10 @@
 package com.chrisventura.apps.dumbposts.data.net;
 
+import com.chrisventura.apps.dumbposts.data.entity.PostEntity;
 import com.chrisventura.apps.dumbposts.data.net.service.PostService;
-import com.chrisventura.apps.dumbposts.domain.model.Post;
 import com.chrisventura.apps.dumbposts.domain.repository.PostRepository;
 
 import java.util.List;
-
-import javax.inject.Inject;
 
 import io.reactivex.Observable;
 
@@ -23,18 +21,18 @@ public class PostRepositoryImpl implements PostRepository {
 
 
     @Override
-    public Observable<List<Post>> get() {
+    public Observable<List<PostEntity>> get() {
         return postService.getPosts();
     }
 
     @Override
-    public Observable<Post> getSingle(Object id) {
+    public Observable<PostEntity> getSingle(Object id) {
         Integer integer = (Integer) id;
         return postService.getSinglePost(integer);
     }
 
     @Override
-    public Observable<Post> insert(Post post) {
+    public Observable<PostEntity> insert(PostEntity post) {
         return postService.insertPost(post);
     }
 }

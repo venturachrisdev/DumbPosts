@@ -1,6 +1,6 @@
 package com.chrisventura.apps.dumbposts.data.net.service;
 
-import com.chrisventura.apps.dumbposts.domain.model.Post;
+import com.chrisventura.apps.dumbposts.data.entity.PostEntity;
 
 import java.util.List;
 
@@ -17,12 +17,12 @@ import retrofit2.http.Path;
 public interface PostService {
 
     @GET("posts")
-    Observable<List<Post>> getPosts();
+    Observable<List<PostEntity>> getPosts();
 
     @GET("posts/{id}")
-    Observable<Post> getSinglePost(@Path("id") Integer id);
+    Observable<PostEntity> getSinglePost(@Path("id") Integer id);
 
     @POST("posts")
-    Observable<Post> insertPost(@Body Post post);
+    Observable<PostEntity> insertPost(@Body PostEntity post);
 
 }

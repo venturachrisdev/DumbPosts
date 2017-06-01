@@ -1,5 +1,6 @@
 package com.chrisventura.apps.dumbposts;
 
+import com.chrisventura.apps.dumbposts.data.entity.mapper.PostEntityModelMapper;
 import com.chrisventura.apps.dumbposts.data.net.PostRepositoryImpl;
 import com.chrisventura.apps.dumbposts.data.net.helper.ConnectionHelper;
 import com.chrisventura.apps.dumbposts.data.net.service.PostService;
@@ -22,11 +23,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
 
-import io.reactivex.internal.schedulers.ExecutorScheduler;
-import io.reactivex.schedulers.Schedulers;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -75,11 +72,13 @@ public class DumbUnitTest {
             }
         };
 
+        PostEntityModelMapper modelMapper = new PostEntityModelMapper();
+
         getPostsInteractor = new GetPostsInteractor(
-                postRepository, connectionHelper);
+                postRepository, connectionHelper, modelMapper);
 
         getSinglePostInteractor = new GetSinglePostInteractor(
-                postRepository, connectionHelper);
+                postRepository, connectionHelper, modelMapper);
 
 
         mainPresenter = new MainPresenterImpl(getPostsInteractor);

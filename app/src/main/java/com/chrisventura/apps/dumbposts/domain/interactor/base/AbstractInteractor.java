@@ -14,12 +14,14 @@ import io.reactivex.observers.DisposableObserver;
 
 
 public abstract class AbstractInteractor<Result, Params> {
-    Scheduler mThreadExecutor;
-    Scheduler mPostExectutor;
-    CompositeDisposable disposables;
-    ConnectionHelper connectionHelper;
+    private Scheduler mThreadExecutor;
+    private Scheduler mPostExectutor;
+    private CompositeDisposable disposables;
+    private ConnectionHelper connectionHelper;
 
-    protected AbstractInteractor(Scheduler threadExecutor, Scheduler postExecutor, ConnectionHelper connectionHelper) {
+    protected AbstractInteractor(Scheduler threadExecutor,
+                                 Scheduler postExecutor,
+                                 ConnectionHelper connectionHelper) {
         this.mThreadExecutor = threadExecutor;
         this.mPostExectutor = postExecutor;
         this.disposables = new CompositeDisposable();

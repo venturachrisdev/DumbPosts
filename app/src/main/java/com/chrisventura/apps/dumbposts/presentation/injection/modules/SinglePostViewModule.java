@@ -1,4 +1,4 @@
-package com.chrisventura.apps.dumbposts.domain.injection.modules;
+package com.chrisventura.apps.dumbposts.presentation.injection.modules;
 
 import com.chrisventura.apps.dumbposts.domain.interactor.GetSinglePostInteractor;
 import com.chrisventura.apps.dumbposts.presentation.presenter.SinglePostPresenter;

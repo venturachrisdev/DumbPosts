@@ -7,8 +7,8 @@ import android.widget.Toast;
 
 import com.chrisventura.apps.dumbposts.DumbPostApplication;
 import com.chrisventura.apps.dumbposts.R;
-import com.chrisventura.apps.dumbposts.domain.injection.components.DaggerMainViewComponent;
-import com.chrisventura.apps.dumbposts.domain.injection.modules.MainViewModule;
+import com.chrisventura.apps.dumbposts.presentation.injection.components.DaggerMainViewComponent;
+import com.chrisventura.apps.dumbposts.presentation.injection.modules.MainViewModule;
 import com.chrisventura.apps.dumbposts.domain.model.Post;
 import com.chrisventura.apps.dumbposts.presentation.presenter.MainPresenter;
 import com.chrisventura.apps.dumbposts.presentation.ui.MainView;

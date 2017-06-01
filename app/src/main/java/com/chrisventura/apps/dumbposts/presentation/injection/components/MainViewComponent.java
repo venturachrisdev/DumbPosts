@@ -1,6 +1,6 @@
-package com.chrisventura.apps.dumbposts.domain.injection.components;
+package com.chrisventura.apps.dumbposts.presentation.injection.components;
 
-import com.chrisventura.apps.dumbposts.domain.injection.modules.MainViewModule;
+import com.chrisventura.apps.dumbposts.presentation.injection.modules.MainViewModule;
 import com.chrisventura.apps.dumbposts.presentation.ui.activities.MainActivity;
 import com.chrisventura.apps.dumbposts.util.CustomScope;
 
