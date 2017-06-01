@@ -18,7 +18,6 @@ Libraries
 
 Todo
 ----
-- [ ] `injection` package should be inside of presentation.
 - [ ] creates tests for each layer.
 - [ ] implements retrolambda.
 
